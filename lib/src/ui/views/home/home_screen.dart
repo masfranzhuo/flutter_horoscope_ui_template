@@ -5,6 +5,8 @@ import 'package:flutter_horoscope_ui_template/src/ui/core/styles/spacing_style.d
 import 'package:flutter_horoscope_ui_template/src/ui/shared/horoscope_widget.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const routeName = '/home';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,10 @@ class HomeScreen extends StatelessWidget {
               background: ShaderMask(
                 shaderCallback: (rectangle) {
                   return LinearGradient(
-                    colors: [Theme.of(context).primaryColor, Colors.transparent],
+                    colors: [
+                      Theme.of(context).primaryColor,
+                      Colors.transparent
+                    ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     stops: [0.5, 1],
@@ -59,10 +64,12 @@ class HomeScreen extends StatelessWidget {
                         child: GridView.builder(
                           shrinkWrap: true,
                           physics: ScrollPhysics(),
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3, childAspectRatio: 1),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3, childAspectRatio: 1),
                           itemCount: dataHoroscope.length,
                           itemBuilder: (context, index) => HoroscopeWidget(
+                            id: index.toString(),
                             image: dataHoroscope[index].imagePath,
                             name: dataHoroscope[index].name,
                           ),

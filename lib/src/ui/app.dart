@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_horoscope_ui_template/src/resources/pallete.dart';
-import 'package:flutter_horoscope_ui_template/src/ui/views/home/home_screen.dart';
+
+import 'views/home/home_screen.dart';
+import 'views/horoscope/horoscope_screen.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -12,6 +14,13 @@ class MyApp extends StatelessWidget {
         primaryColor: Pallete.primaryColor,
         backgroundColor: Pallete.backGroundColor,
       ),
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+        HoroscopeScreen.routeName: (context) => HoroscopeScreen(),
+      },
+      onUnknownRoute: (_) {
+        return MaterialPageRoute(builder: (context) => HomeScreen());
+      },
       home: HomeScreen(),
     );
   }

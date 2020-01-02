@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_horoscope_ui_template/src/resources/pallete.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/styles/container/box_decoration_style.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/styles/spacing_style.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/utils/size_config.dart';
@@ -46,15 +47,27 @@ class HoroscopeWidget extends StatelessWidget {
             ? SizedBox()
             : Container(
                 padding: EdgeInsets.only(top: TightSpacing),
-                child:
-                    Text(name ?? '', style: Theme.of(context).textTheme.subtitle),
+                child: Text(
+                  name ?? '',
+                  style: Theme.of(context)
+                      .textTheme
+                      .subtitle
+                      .copyWith(color: Pallete.textDefaultColor),
+                ),
               ),
-        date == ''
+        date == null
             ? SizedBox()
             : Container(
                 padding: EdgeInsets.only(top: TightSpacing),
-                child: Text(date ?? '',
-                    style: Theme.of(context).textTheme.subtitle),
+                child: FittedBox(
+                  child: Text(
+                    date ?? '',
+                    style: Theme.of(context)
+                        .textTheme
+                        .subtitle
+                        .copyWith(color: Pallete.textDefaultColor),
+                  ),
+                ),
               ),
       ],
     );

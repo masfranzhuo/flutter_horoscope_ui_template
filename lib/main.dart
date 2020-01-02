@@ -7,7 +7,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
+    // DeviceOrientation.portraitUp,
   ]);
   runApp(MyApp());
 }

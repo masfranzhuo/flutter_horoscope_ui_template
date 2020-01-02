@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_horoscope_ui_template/src/resources/pallete.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/views/home/home_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,8 +9,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.amber,
-        accentColor: Colors.blueAccent,
+        primaryColor: Pallete.primaryColor,
+        backgroundColor: Pallete.backGroundColor,
       ),
       home: HomeScreen(),
     );

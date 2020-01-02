@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_horoscope_ui_template/src/ui/views/home/home_screen.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -8,9 +9,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: Colors.amber,
-        accentColor: Colors.black87,
+        accentColor: Colors.blueAccent,
       ),
-      home: Text('New App'),
+      home: HomeScreen(),
     );
   }
 }

@@ -31,12 +31,17 @@ class HoroscopeWidget extends StatelessWidget {
             Positioned.fill(
               child: Align(
                 alignment: Alignment.center,
-                child: Container(
-                  width: SizeConfig.screenWidth * 0.25,
-                  height: SizeConfig.screenWidth * 0.25,
-                  decoration: boxDecorationStyle(
-                    assetImage: image,
-                    borderRadius: SizeConfig.screenWidth * 0.25,
+                child: Material(
+                  shape: CircleBorder(),
+                  clipBehavior: Clip.hardEdge,
+                  color: Colors.transparent,
+                  child: Ink.image(
+                    image: AssetImage(image),
+                    width: SizeConfig.screenWidth * 0.25,
+                    height: SizeConfig.screenWidth * 0.25,
+                    child: InkWell(
+                      onTap: () {},
+                    ),
                   ),
                 ),
               ),

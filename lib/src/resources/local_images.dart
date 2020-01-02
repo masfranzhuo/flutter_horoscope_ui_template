@@ -2,6 +2,8 @@ class LocalImages {
   static const _assetImages = 'assets/images/';
   static const _assetImagesHoroscope = '${_assetImages}horoscope/';
 
+  static const appBarBackground = '${_assetImages}appbar-background.jpg';
+
   static const aries = '${_assetImagesHoroscope}aries.jpg';
   static const taurus = '${_assetImagesHoroscope}taurus.jpg';
   static const gemini = '${_assetImagesHoroscope}gemini.jpg';

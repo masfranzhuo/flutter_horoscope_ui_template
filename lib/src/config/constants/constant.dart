@@ -1,4 +1,4 @@
-const APP_TITLE = 'HOROSCOPE';
+const APP_TITLE = 'Horoscope';
 
 const HOROSCOPE_ARIES = 'Aries';
 const HOROSCOPE_TAURUS = 'Taurus';

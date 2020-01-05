@@ -10,15 +10,23 @@ class HoroscopeWidget extends StatelessWidget {
   final String image;
   final String name;
   final String date;
+  final bool isNavigation;
 
-  const HoroscopeWidget({Key key, @required this.id, @required this.image, this.name, this.date})
-      : super(key: key);
+  const HoroscopeWidget({
+    Key key,
+    @required this.id,
+    @required this.image,
+    this.name,
+    this.date,
+    this.isNavigation = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         Stack(
           children: <Widget>[
@@ -45,9 +53,10 @@ class HoroscopeWidget extends StatelessWidget {
                       height: SizeConfig.screenWidth * 0.25,
                       child: InkWell(
                         onTap: () {
-                          Navigator.of(context).pushNamed(
-                              HoroscopeScreen.routeName,
-                              arguments: id);
+                          if (isNavigation)
+                            Navigator.of(context).pushNamed(
+                                HoroscopeScreen.routeName,
+                                arguments: id);
                         },
                       ),
                     ),

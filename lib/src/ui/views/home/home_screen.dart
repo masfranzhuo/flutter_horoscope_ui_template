@@ -15,14 +15,6 @@ class HomeScreen extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             flexibleSpace: FlexibleSpaceBar(
-              // title: Text(
-              //   APP_TITLE,
-              //   style: Theme.of(context)
-              //       .textTheme
-              //       .title
-              //       .copyWith(color: Colors.white),
-              // ),
-              centerTitle: true,
               background: ShaderMask(
                 shaderCallback: (rectangle) {
                   return LinearGradient(
@@ -72,6 +64,7 @@ class HomeScreen extends StatelessWidget {
                             id: index.toString(),
                             image: dataHoroscope[index].imagePath,
                             name: dataHoroscope[index].name,
+                            isNavigation: true,
                           ),
                         ),
                       ),

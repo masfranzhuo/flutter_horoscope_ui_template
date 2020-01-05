@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_horoscope_ui_template/src/config/data/horoscope_data.dart';
-import 'package:flutter_horoscope_ui_template/src/resources/local_images.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/styles/spacing_style.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/shared/horoscope_widget.dart';
+import 'package:flutter_horoscope_ui_template/src/ui/views/home/builder/home_appbar_builder.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
@@ -14,28 +14,7 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            flexibleSpace: FlexibleSpaceBar(
-              background: ShaderMask(
-                shaderCallback: (rectangle) {
-                  return LinearGradient(
-                    colors: [
-                      Theme.of(context).primaryColor,
-                      Colors.transparent
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    stops: [0.5, 1],
-                  ).createShader(
-                    Rect.fromLTRB(0, 0, rectangle.width, rectangle.height),
-                  );
-                },
-                blendMode: BlendMode.dstIn,
-                child: Image.asset(
-                  LocalImages.appBarBackground,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+            flexibleSpace: HomeAppbarBuilder(),
             expandedHeight: 200,
           ),
           SliverList(

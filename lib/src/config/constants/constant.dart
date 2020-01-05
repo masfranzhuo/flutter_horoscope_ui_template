@@ -12,3 +12,25 @@ const HOROSCOPE_SAGITTARIUS = 'Sagittarius';
 const HOROSCOPE_CAPRICORN = 'Capricorn';
 const HOROSCOPE_AQUARIUS = 'Aquarius';
 const HOROSCOPE_PISCES = 'Pisces';
+
+const PERIOD_DAILY = 'Daily';
+const PERIOD_WEEKLY = 'Weekly';
+const PERIOD_MONTHLY = 'Monthly';
+const PERIODS = [
+  PERIOD_DAILY,
+  PERIOD_WEEKLY,
+  PERIOD_MONTHLY,
+];
+
+const CATEGORY_GENERAL = 'General';
+const CATEGORY_CAREER = 'Career';
+const CATEGORY_LOVE = 'Love';
+const CATEGORY_HEALTH = 'Health';
+const CATEGORY_FINANCIAL = 'Financial';
+const CATEGORIES = [
+  CATEGORY_GENERAL,
+  CATEGORY_CAREER,
+  CATEGORY_LOVE,
+  CATEGORY_HEALTH,
+  CATEGORY_FINANCIAL,
+];

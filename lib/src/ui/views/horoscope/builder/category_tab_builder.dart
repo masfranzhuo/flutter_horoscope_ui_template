@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_horoscope_ui_template/src/config/data/category_data.dart';
+import 'package:flutter_horoscope_ui_template/src/config/data/dummy_data.dart';
+import 'package:flutter_horoscope_ui_template/src/config/data/horoscope_data.dart';
 import 'package:flutter_horoscope_ui_template/src/resources/pallete.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/styles/container/box_decoration_style.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/styles/spacing_style.dart';
 
 class CategoryTabBuilder extends StatelessWidget {
   final TabController controller;
-  
-  CategoryTabBuilder(this.controller);
+  final int id;
+
+  CategoryTabBuilder(this.controller, this.id);
 
   @override
   Widget build(BuildContext context) {
+    Map<String, dynamic> horoscopeData = dataDummies.where((item) {
+      return item['id'] == dataHoroscope[id].name;
+    }).toList()[0];
+    print(horoscopeData['id']);
     return DefaultTabController(
       length: dataCategory.length,
       child: Column(
@@ -62,8 +69,7 @@ class CategoryTabBuilder extends StatelessWidget {
                               .copyWith(color: Pallete.textDefaultColor),
                         ),
                       ),
-                      Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+                      Text(horoscopeData[item.title])
                     ],
                   ),
                 );

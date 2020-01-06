@@ -96,9 +96,9 @@ class _HoroscopeScreenState extends State<HoroscopeScreen>
           },
           body: TabBarView(
             children: [
-              CategoryTabBuilder(_tabDailyCategoryController),
-              CategoryTabBuilder(_tabWeeklyCategoryController),
-              CategoryTabBuilder(_tabMonthlyCategoryController),
+              CategoryTabBuilder(_tabDailyCategoryController, id),
+              CategoryTabBuilder(_tabWeeklyCategoryController, id),
+              CategoryTabBuilder(_tabMonthlyCategoryController, id),
             ],
           ),
         ),

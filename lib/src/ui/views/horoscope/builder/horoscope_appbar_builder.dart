@@ -53,12 +53,15 @@ class HoroscopeAppbarBuilder extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text(
-                              dataHoroscope[id].name,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .title
-                                  .copyWith(color: Pallete.textDefaultColor),
+                            Hero(
+                              tag: dataHoroscope[id].name,
+                              child: Text(
+                                dataHoroscope[id].name,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .title
+                                    .copyWith(color: Pallete.textDefaultColor),
+                              ),
                             ),
                             Text(
                               '${dataHoroscope[id].startDate} - ${dataHoroscope[id].endDate}',
@@ -76,6 +79,9 @@ class HoroscopeAppbarBuilder extends StatelessWidget {
                       child: HoroscopeWidget(
                         id: id.toString(),
                         image: dataHoroscope[id].imagePath,
+                        onHandler: () {
+                          Navigator.of(context).pop();
+                        },
                       ),
                     ),
                   ],

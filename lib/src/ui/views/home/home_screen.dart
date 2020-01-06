@@ -3,6 +3,7 @@ import 'package:flutter_horoscope_ui_template/src/config/data/horoscope_data.dar
 import 'package:flutter_horoscope_ui_template/src/ui/core/styles/spacing_style.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/shared/horoscope_widget.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/views/home/builder/home_appbar_builder.dart';
+import 'package:flutter_horoscope_ui_template/src/ui/views/horoscope/horoscope_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
@@ -43,7 +44,11 @@ class HomeScreen extends StatelessWidget {
                             id: index.toString(),
                             image: dataHoroscope[index].imagePath,
                             name: dataHoroscope[index].name,
-                            isNavigation: true,
+                            onHandler: () {
+                              Navigator.of(context).pushNamed(
+                                  HoroscopeScreen.routeName,
+                                  arguments: index);
+                            },
                           ),
                         ),
                       ),

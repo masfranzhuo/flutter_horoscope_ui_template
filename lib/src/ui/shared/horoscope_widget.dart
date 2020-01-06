@@ -3,14 +3,13 @@ import 'package:flutter_horoscope_ui_template/src/resources/pallete.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/styles/container/box_decoration_style.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/styles/spacing_style.dart';
 import 'package:flutter_horoscope_ui_template/src/ui/core/utils/size_config.dart';
-import 'package:flutter_horoscope_ui_template/src/ui/views/horoscope/horoscope_screen.dart';
 
 class HoroscopeWidget extends StatelessWidget {
   final String id;
   final String image;
   final String name;
   final String date;
-  final bool isNavigation;
+  final Function onHandler;
 
   const HoroscopeWidget({
     Key key,
@@ -18,7 +17,7 @@ class HoroscopeWidget extends StatelessWidget {
     @required this.image,
     this.name,
     this.date,
-    this.isNavigation = false,
+    this.onHandler,
   }) : super(key: key);
 
   @override
@@ -53,10 +52,7 @@ class HoroscopeWidget extends StatelessWidget {
                       height: SizeConfig.screenWidth * 0.25,
                       child: InkWell(
                         onTap: () {
-                          if (isNavigation)
-                            Navigator.of(context).pushNamed(
-                                HoroscopeScreen.routeName,
-                                arguments: id);
+                          if (onHandler != null) onHandler();
                         },
                       ),
                     ),
@@ -70,12 +66,15 @@ class HoroscopeWidget extends StatelessWidget {
             ? SizedBox()
             : Container(
                 padding: EdgeInsets.only(top: TightSpacing),
-                child: Text(
-                  name ?? '',
-                  style: Theme.of(context)
-                      .textTheme
-                      .subtitle
-                      .copyWith(color: Pallete.textDefaultColor),
+                child: Hero(
+                  tag: name,
+                  child: Text(
+                    name ?? '',
+                    style: Theme.of(context)
+                        .textTheme
+                        .subtitle
+                        .copyWith(color: Pallete.textDefaultColor),
+                  ),
                 ),
               ),
         date == null

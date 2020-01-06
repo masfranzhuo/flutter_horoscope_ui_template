@@ -50,8 +50,7 @@ class _HoroscopeScreenState extends State<HoroscopeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context).settings.arguments;
-    final id = int.parse(args);
+    final id = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: DefaultTabController(

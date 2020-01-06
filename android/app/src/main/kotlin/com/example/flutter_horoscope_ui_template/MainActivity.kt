@@ -1,4 +1,4 @@
-package com.example.flutter_horoscope_ui_template
+package com.hodiaugames.horoscope_ui_template
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
